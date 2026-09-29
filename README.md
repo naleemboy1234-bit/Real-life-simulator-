@@ -702,11 +702,10 @@ function hud(){
   c.fillStyle='#fff';c.strokeStyle='#f2c230';c.lineWidth=2;c.beginPath();c.arc(p[0],p[1],4,0,7);c.fill();c.stroke();
   const d=Math.hypot(t.x-pl.x,t.z-pl.z),dxw=t.x-pl.x,dzw=t.z-pl.z;
   $('job').style.display='block';$('jt').textContent=job.d.n+': '+t.lab+'  '+Math.round(d)+' m'+(t.prog>0?'  '+Math.min(100,Math.round(t.prog/t.w*100))+'%':'');
-  $('arr').style.transform='rotate('+Math.atan2(dxw*cs-dzw*sn,-(dxw*sn+dzw*cs))+'rad)'}
+$('arr').style.transform='rotate('+Math.atan2(dxw*cs-dzw*sn,-(dxw*sn+dzw*cs))+'rad)'}
  else $('job').style.display='none';
  c.translate(48,48);const hx=Math.sin(pl.ry),hz=Math.cos(pl.ry);c.rotate(Math.atan2(hx*cs-hz*sn,-(hx*sn+hz*cs)));
- c.fillStyle='#fff';c.strokeStyle='#000';c.lineWidth=1;c.beginPath();c.moveTo(0,-7);c.lineTo(5,6);c.lineTo(-5,6);c.closePath();c.fill();c.stroke();c.restore()}
-
+c.fillStyle='#fff';c.strokeStyle='#000';c.lineWidth=1;c.beginPath();c.moveTo(0,-7);c.lineTo(5,6);c.lineTo(-5,6);c.closePath();c.fill();c.stroke();c.restore()}
 let last=0;
 function loop(ts){requestAnimationFrame(loop);const dt=Math.min(.05,(ts-last)/1000||0);last=ts;update(dt);renderer.render(scene,cam)}
 requestAnimationFrame(loop);
